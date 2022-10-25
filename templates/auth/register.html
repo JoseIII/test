@@ -1,0 +1,26 @@
+{% load static %}
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+{% include 'navbar.html' %}
+{% if request.user.is_admin %}
+<h2 class="title">
+    Register
+</h2>
+<form class="registerform" method="post">
+    {% csrf_token %}
+    <p>Email</p>{{ form.email }}
+    <p>First Name</p>{{ form.first_name }}
+    <p>Last Name</p>{{ form.last_name }}
+    <p>Password</p>{{ form.password1 }}
+    <p>Confirm Password</p>{{ form.password2 }}
+    <p>Student {{ form.student }}</p>
+    <p>Professor {{ form.professor }}</p>
+    <input type="submit" value="Submit">
+</form>
+{% endif %}
+</body>
+</html>

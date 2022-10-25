@@ -1,0 +1,29 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <title>Edit Course</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+{% include 'navbar.html' %}
+<h2 class="title">
+    Edit Course
+</h2>
+<form class="courseform" method="post" action="{{ course.id }}">
+    {% csrf_token %}
+    Course Title: <br>
+    <input name="ctitle" value="{{ course.ctitle }}">
+    <br><br>
+    Course Description: <br>
+    <input name="cdescription" value="{{ course.cdescription }}">
+    <br><br>
+    Course Professor ( Ignore fls ): <br>
+    <input name="ccreator" value="{{ course.ccreator }}">
+    <br><br>
+    <input type="Reset" value="Reset">
+    <input type="submit" value="Submit">
+</form>
+</p>
+</body>
+</html>

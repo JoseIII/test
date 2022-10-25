@@ -1,0 +1,20 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+{% include 'navbar.html' %}
+<h2 class="title">
+    Login
+</h2>
+<form class="loginform" method="post" action="">
+    {% csrf_token %}
+    {{ form }}
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

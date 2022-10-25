@@ -1,0 +1,65 @@
+body{
+    margin: 0px;
+    background-color: #BFD7EA;
+}
+.title{
+    margin: 50px;
+    text-align: center;
+    font-family: "Bebas Neue";
+    font-size: 150px;
+}
+.loginform input{
+    width: 10%;
+    margin: auto;
+}
+.loginform{
+    text-align:center;
+}
+.registerform{
+    text-align: center;
+}
+h3{
+    text-align: center;
+    font-family: Bebas Neue;
+    font-size: 30px;
+}
+a{
+    display: block;
+    width: 100px;
+    margin: auto;
+    font-family: Bebas Neue;
+    font-size: 50px;
+}
+.currentuser{
+    margin-left: 70px;
+}
+.courseform{
+    text-align: center;
+}
+.listview{
+    text-align: center;
+}
+.userlist {
+    text-align: center;
+    border: 0px;
+    width: 50%;
+    margin: auto;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+}
+td {
+    padding: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.add-course{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+.course-link{
+    font-family: Bebas Neue;
+    font-size: 20px;
+}

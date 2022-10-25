@@ -1,0 +1,15 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <title>Logout</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+{% include "navbar.html" %}
+<h2 class="title">
+    You are logged out
+</h2>
+<a href="{% url 'homepage' %}">Logout</a>
+</body>
+</html>

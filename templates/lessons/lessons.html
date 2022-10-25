@@ -1,0 +1,41 @@
+{% load static %}
+
+<html lang="en">
+<head>
+
+    <title>Lessons</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+{% include 'navbar.html' %}<br><br><br><br><br><br>
+<table align="center" class="userlist">
+    <thead>
+    <tr>
+        <th>Lessons ID</th>
+        <th>Lesson</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+     {% for lesson in lessons %}
+        <tr>
+            <td data-label="ID">{{ lesson.id }}</td>
+            <td data-label="Title">{{ lesson.title }}</td>
+            <td data-label="Title">{{ lesson.description}}</td>
+            <td><button onclick="location.href='{% url 'deletelessons' lesson.id %}'">Delete</button>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br><br>
+<div class="add-course">
+<button onclick="location.href='{% url 'addlessonspage' %}'">Add Lesson</button>
+</div>
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>

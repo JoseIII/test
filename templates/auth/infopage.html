@@ -1,0 +1,17 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <title>Information Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+{% include 'navbar.html' %}
+<h2 class="title">
+    Information Page
+</h2>
+<p class="currentuser">Name: {{ user.first_name }} {{ user.last_name }}</p>
+<p class="currentuser">Email: {{ user.email }}</p>
+
+</body>
+</html>

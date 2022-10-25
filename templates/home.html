@@ -1,0 +1,15 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+{% include 'navbar.html' %}
+<h2 class="title">
+    Homepage
+</h2>
+<p class="currentuser">Currently logged in as {{ user.first_name }} {{ user.last_name }}</p>
+</body>
+</html>

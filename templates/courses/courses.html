@@ -1,0 +1,44 @@
+{% load static %}
+
+<html lang="en">
+<head>
+
+    <title>Courses</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+{% include 'navbar.html' %}<br><br><br><br><br><br>
+<table align="center" class="userlist">
+    <thead>
+    <tr>
+        <th>Course ID</th>
+        <th>Course Title</th>
+        <th>Course Description</th>
+        <th>Course Professor</th>
+    </tr>
+    </thead>
+    <tbody>
+     {% for course in courses %}
+        <tr>
+            <td data-label="ID">{{ course.id }}</td>
+            <td data-label="Title"><a class="course-link" href="{% url 'detailed' course.id %}">{{ course.ctitle }}</a></td>
+            <td data-label="Description">{{ course.cdescription }}</td>
+            <td data-label="Section">{{ course.ccreator.first_name }}</td>
+            {% if request.user.is_admin %}
+            <td><button onclick="location.href='{% url 'updatecourse' course.id %}'">Update</button>
+            </td>
+            <td><button onclick="location.href='{% url 'deletecourse' course.id %}'">Delete</button>
+            </td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br><br>
+<div class="add-course">
+    {% if request.user.is_admin %}
+<button onclick="location.href='{% url 'addcoursepage' %}'">Add Course</button>
+    {% endif %}
+</div>
+</body>
+</html>

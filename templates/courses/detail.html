@@ -1,0 +1,18 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <title>Course Detail View</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+{% include 'navbar.html' %}
+<h2 class="title">
+    {{ course.ctitle }}
+</h2>
+<p class="currentuser">Currently logged in as {{ user.first_name }} {{ user.last_name }}</p>
+<p class="currentuser">Viewing {{ course.ctitle }}</p>
+<p class="currentuser">{{ course.cdescription }}</p>
+<p class="currentuser"><a href="{% url 'lessonspage' %}">Lessons</a></p>
+</body>
+</html>

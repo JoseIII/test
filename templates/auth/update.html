@@ -1,0 +1,28 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <title>Update</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+{% include 'navbar.html' %}
+<h2 class="title">
+    Update
+</h2>
+<form class="loginform" method="post" action="updaterecord/{{ user.id }}">
+    {% csrf_token %}
+    Username: <br>
+    <input name="email" value="{{ user.email }}">
+    <br><br>
+    First Name: <br>
+    <input name="first_name" value="{{ user.first_name }}">
+    <br><br>
+    Last Name: <br>
+    <input name="last_name" value="{{ user.last_name }}">
+    <br><br>
+    <input type="Reset" value="Reset">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
